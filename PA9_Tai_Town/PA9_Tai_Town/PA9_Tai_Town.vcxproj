@@ -138,7 +138,8 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="readme.txt" />
+    <ClInclude Include="Menu.hpp" />
+    <ClInclude Include="Mole.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
