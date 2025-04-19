@@ -17,12 +17,13 @@ int main(void) {
     std::vector<Mole> moles;
 
     for (int i = 0; i < 10; ++i) {
-        moles.push_back(Mole(moleTexture, 1)); 
+        moles.push_back(Mole(moleTexture, 3)); 
     }
   //  Mole test(moleTexture,3);
 
    // shape.setFillColor(sf::Color::Green);
-
+    int spaceOut = -1;
+    sf::Clock gameClock;
     while (window.isOpen())
     {
         while (const std::optional event = window.pollEvent())
@@ -37,12 +38,15 @@ int main(void) {
         
         window.clear();
    //     window.draw(shape);
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < spaceOut; i++) {
             window.draw(moles[i]);
             moles[i].update();
         }
       ///  window.draw(test);
         window.display();
       //  test.update();
+        if(gameClock.getElapsedTime().asSeconds()<=10) {
+            spaceOut= gameClock.getElapsedTime().asSeconds()-1;
+        }
     }
 }
