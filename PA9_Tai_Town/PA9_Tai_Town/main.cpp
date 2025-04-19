@@ -9,15 +9,15 @@ int main(void) {
     srand(static_cast<unsigned>(time(0)));
 
     sf::RenderWindow window(sf::VideoMode({ 800, 600 }), "SFML works!");
-    sf::CircleShape shape(100.f);
+//    sf::CircleShape shape(100.f);
     sf::Texture moleTexture;
   //  std::cout << "Working directory: " << std::filesystem::current_path() << std::endl;
     moleTexture.loadFromFile("mole_image.png");
 
 
-    Mole test(moleTexture,sf::Vector2f(0,0),1);
+    Mole test(moleTexture,3);
 
-    shape.setFillColor(sf::Color::Green);
+   // shape.setFillColor(sf::Color::Green);
 
     while (window.isOpen())
     {
@@ -30,9 +30,11 @@ int main(void) {
 
         }
 
+        
         window.clear();
-        window.draw(shape);
+   //     window.draw(shape);
         window.draw(test);
         window.display();
+        test.update();
     }
 }

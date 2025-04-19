@@ -1,16 +1,77 @@
 #include "mole.hpp"
 
+Mole::Mole(const sf::Texture& texture, const sf::Vector2f& pos, int difficulty) : sf::Sprite(texture) {
+	this->setPosition(pos);
+
+	this->setScale(sf::Vector2f(0.08f, 0.08f));
+
+	this->setColor(sf::Color(255, 255, 255, 0));
+
+	isVisible = false;
+	hitState = false;
+
+	switch (difficulty) {
+	case 1:
+		visibleBase = 1.0f;
+		break;
+	case 2:
+		visibleBase = 0.5f;
+		break;
+	case 3:
+		visibleBase = 0.0f;
+		break;
+	default:
+		visibleBase = 0.5f;
+		break;
+	}
+
+	hiddenDuration = (rand() % 100) * 0.01f + 2.0f;
+	visibleDuration = (rand() % 100) * 0.01f + visibleBase;
+}
+
+Mole::Mole(const sf::Texture& texture, int difficulty) : sf::Sprite(texture) {
+	float randX = static_cast<float>(rand() % 700);
+	float randY = static_cast<float>(rand() % 500);
+
+	this->setPosition(sf::Vector2f(randX, randY));
+
+	this->setScale(sf::Vector2f(0.08f, 0.08f));
+
+	this->setColor(sf::Color(255, 255, 255, 0));
+
+	isVisible = false;
+	hitState = false;
+
+	switch (difficulty) {
+	case 1:
+		visibleBase = 1.0f;
+		break;
+	case 2:
+		visibleBase = 0.5f;
+		break;
+	case 3:
+		visibleBase = 0.0f;
+		break;
+	default:
+		visibleBase = 0.5f;
+		break;
+	}
+
+	hiddenDuration = (rand() % 100) * 0.01f + 2.0f;
+	visibleDuration = (rand() % 100) * 0.01f + visibleBase;
+}
+
 void Mole::update()
 {
 	float elapsedTime = timer.getElapsedTime().asSeconds();
 	if (isVisible && elapsedTime > visibleDuration) {
 		hide();
-		hiddenDuration = (rand() * 100) * 0.01f + 2.0f;
+		hiddenDuration = (rand() % 100) * 0.01f + 2.0f;
 		timer.restart();
 	}
 	else if (!isVisible && elapsedTime > hiddenDuration) {
 		show();
-		visibleDuration = (rand() * 100) * 0.01f + visibleBase;
+		visibleDuration = (rand() % 100) * 0.01f + visibleBase;
 		timer.restart();
 	}
 }
@@ -27,8 +88,8 @@ void Mole::show()
 	isVisible = true;
 	this->setColor(sf::Color(255, 255, 255, 255));
 
-	float randX = static_cast<float>(rand() % 700 + 50);
-	float randY = static_cast<float>(rand() % 500 + 50);
+	float randX = static_cast<float>(rand() % 700 );
+	float randY = static_cast<float>(rand() % 500 );
 	this->setPosition(sf::Vector2f(randX, randY));
 }
 
