@@ -4,8 +4,9 @@
 
 class Mole : public sf::Sprite {
 public:
-	Mole(const sf::Texture texture, const sf::Vector2f& pos, int difficulty) : sf::Sprite(texture){
+	Mole(const sf::Texture& texture, const sf::Vector2f& pos, int difficulty) : sf::Sprite(texture){
 		this->setPosition(pos);
+		this->setScale(sf::Vector2f(0.2f, 0.2f));
 		isVisible = false;
 		hitState = false;
 		switch (difficulty) {
@@ -32,6 +33,12 @@ public:
 	void hide();
 
 	void show();
+
+	void setIsVisible(const bool newVis);
+	void setHitState(const bool newHitState);
+	
+	bool getIsVisible();
+	bool getHitState();
 
 private:
 	bool isVisible; // if isVisible is false then the click doesn't count towards the score 

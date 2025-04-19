@@ -31,3 +31,23 @@ void Mole::show()
 	float randY = static_cast<float>(rand() % 500 + 50);
 	this->setPosition(sf::Vector2f(randX, randY));
 }
+
+void Mole::setIsVisible(const bool newVis)
+{
+	isVisible = newVis;
+}
+
+void Mole::setHitState(const bool newHitState)
+{
+	hitState = newHitState;
+}
+
+bool Mole::getIsVisible()
+{
+	return isVisible;
+}
+
+bool Mole::getHitState()
+{
+	return hitState;
+}
