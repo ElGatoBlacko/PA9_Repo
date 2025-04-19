@@ -4,9 +4,13 @@
 
 class Mole : public sf::Sprite {
 public:
+	//if we have time add function to check for mole overlap
+
 	Mole(const sf::Texture& texture, const sf::Vector2f& pos, int difficulty);
 
 	Mole(const sf::Texture& texture, int difficulty);
+
+	void initialize(int difficulty);
 
 	void update();
 

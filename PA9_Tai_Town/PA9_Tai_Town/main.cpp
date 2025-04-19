@@ -14,8 +14,12 @@ int main(void) {
   //  std::cout << "Working directory: " << std::filesystem::current_path() << std::endl;
     moleTexture.loadFromFile("mole_image.png");
 
+    std::vector<Mole> moles;
 
-    Mole test(moleTexture,3);
+    for (int i = 0; i < 10; ++i) {
+        moles.push_back(Mole(moleTexture, 1)); 
+    }
+  //  Mole test(moleTexture,3);
 
    // shape.setFillColor(sf::Color::Green);
 
@@ -33,8 +37,12 @@ int main(void) {
         
         window.clear();
    //     window.draw(shape);
-        window.draw(test);
+        for (int i = 0; i < 10; i++) {
+            window.draw(moles[i]);
+            moles[i].update();
+        }
+      ///  window.draw(test);
         window.display();
-        test.update();
+      //  test.update();
     }
 }
