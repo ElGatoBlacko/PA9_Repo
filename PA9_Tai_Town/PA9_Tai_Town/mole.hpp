@@ -18,6 +18,8 @@ public:
 
 	void show();
 
+	bool isHit(sf::Event event, sf::RenderWindow& window);
+
 	void setIsVisible(const bool newVis);
 	void setHitState(const bool newHitState);
 	

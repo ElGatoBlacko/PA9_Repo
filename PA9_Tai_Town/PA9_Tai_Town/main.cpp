@@ -17,7 +17,7 @@ int main(void) {
     std::vector<Mole> moles;
 
     for (int i = 0; i < 10; ++i) {
-        moles.push_back(Mole(moleTexture, 3)); 
+        moles.push_back(Mole(moleTexture, 1)); 
     }
   //  Mole test(moleTexture,3);
 
@@ -32,6 +32,13 @@ int main(void) {
                 window.close();
             }
                     
+            if (event->is<sf::Event::MouseButtonPressed>()) {
+                for (int i = 0; i < 10; ++i) {
+                    if (moles[i].isHit(*event, window)) {
+                        std::cout << "MOLE HIT" << std::endl;
+                    }
+                }
+            }
 
         }
 

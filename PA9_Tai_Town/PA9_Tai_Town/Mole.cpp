@@ -78,6 +78,20 @@ void Mole::show()
 	this->setPosition(sf::Vector2f(randX, randY));
 }
 
+bool Mole::isHit(sf::Event event, sf::RenderWindow& window)
+{
+	if (!isVisible) {
+		return false;
+	}
+	if (event.is<sf::Event::MouseButtonPressed>()) {
+		sf::Vector2i pos = sf::Mouse::getPosition(window);
+		float x = static_cast<float>(pos.x);
+		float y = static_cast<float>(pos.y);
+		return this->getGlobalBounds().contains(sf::Vector2f(x, y));
+	}
+	return false;
+}
+
 void Mole::setIsVisible(const bool newVis)
 {
 	isVisible = newVis;
