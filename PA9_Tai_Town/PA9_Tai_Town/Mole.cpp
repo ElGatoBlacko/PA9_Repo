@@ -48,16 +48,18 @@ void Mole::initialize(int difficulty)
 
 void Mole::update()
 {
-	float elapsedTime = timer.getElapsedTime().asSeconds();
-	if (isVisible && elapsedTime > visibleDuration) {
-		hide();
-		hiddenDuration = (rand() % 100) * 0.01f + 2.0f;
-		timer.restart();
-	}
-	else if (!isVisible && elapsedTime > hiddenDuration) {
-		show();
-		visibleDuration = (rand() % 100) * 0.01f + visibleBase;
-		timer.restart();
+	if (!hitState) {
+		float elapsedTime = timer.getElapsedTime().asSeconds();
+		if (isVisible && elapsedTime > visibleDuration) {
+			hide();
+			hiddenDuration = (rand() % 100) * 0.01f + 2.0f;
+			timer.restart();
+		}
+		else if (!isVisible && elapsedTime > hiddenDuration) {
+			show();
+			visibleDuration = (rand() % 100) * 0.01f + visibleBase;
+			timer.restart();
+		}
 	}
 }
 
@@ -91,6 +93,7 @@ bool Mole::isHit(sf::Event event, sf::RenderWindow& window)
 	}
 	return false;
 }
+
 
 void Mole::setIsVisible(const bool newVis)
 {
