@@ -2,6 +2,9 @@
 #include<ctime>
 #include"Mole.hpp"
 #include<iostream>
+
+const int MOLE_NUM = 10;
+
 int main(void) {
 
     srand(static_cast<unsigned>(time(0)));
@@ -15,14 +18,15 @@ int main(void) {
 
     sf::Clock gameClock;
     std::string time = "";
+    int hitCount = 0;
 
     sf::Text runtime(font, time, 30);
     runtime.setFillColor(sf::Color::White);
-    runtime.setPosition(sf::Vector2f(50, 0));
+    runtime.setPosition(sf::Vector2f(0, 0));
 
     std::vector<Mole> moles;
 
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < MOLE_NUM; i++) {
         moles.push_back(Mole(moleTexture, 1)); 
     }
 
@@ -38,7 +42,7 @@ int main(void) {
             }
                     
             if (event->is<sf::Event::MouseButtonPressed>()) {
-                for (int i = 0; i < 10; ++i) {
+                for (int i = 0; i < MOLE_NUM; ++i) {
                     if (moles[i].isHit(*event, window)) {
                         std::cout << "MOLE HIT" << std::endl;
                         moles[i].hide();
@@ -52,9 +56,23 @@ int main(void) {
         
         window.clear();
 
-        time = std::to_string(gameClock.getElapsedTime().asSeconds());
-        runtime.setString(time);
-        for (int i = 0; i < spaceOut && i <10; i++) {
+        for (int i = 0; i < MOLE_NUM; i++) {
+            if (moles[i].getHitState()) {
+                hitCount++;
+            }
+            else {
+                hitCount = 0;
+            }
+        }
+        if (hitCount < MOLE_NUM) {
+            time = std::to_string(gameClock.getElapsedTime().asSeconds());
+            runtime.setString(time);
+        }
+        else {
+            runtime.setPosition(sf::Vector2f(350, 250));
+        }
+       
+        for (int i = 0; i < spaceOut && i <MOLE_NUM; i++) {
             window.draw(moles[i]);
             moles[i].update();
         }
