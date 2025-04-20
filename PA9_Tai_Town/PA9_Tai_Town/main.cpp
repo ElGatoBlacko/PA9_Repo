@@ -2,6 +2,7 @@
 #include<ctime>
 #include"Mole.hpp"
 #include<iostream>
+#include<sstream>
 
 const int MOLE_NUM = 10;
 
@@ -19,11 +20,13 @@ int main(void) {
     sf::Clock gameClock;
     std::string time = "";
     int hitCount = 0;
+    
 
     sf::Text runtime(font, time, 30);
     runtime.setFillColor(sf::Color::White);
     runtime.setPosition(sf::Vector2f(0, 0));
 
+   
     std::vector<Mole> moles;
 
     for (int i = 0; i < MOLE_NUM; i++) {
@@ -65,11 +68,19 @@ int main(void) {
             }
         }
         if (hitCount < MOLE_NUM) {
-            time = std::to_string(gameClock.getElapsedTime().asSeconds());
+            std::stringstream stream;
+            stream <<std::fixed<< std::setprecision(2) << gameClock.getElapsedTime().asSeconds();
+            time = stream.str();
             runtime.setString(time);
         }
         else {
-            runtime.setPosition(sf::Vector2f(350, 250));
+            sf::Text displayMessage(font, "Score:", 60);
+            displayMessage.setPosition(sf::Vector2f(245, 250));
+            displayMessage.setFillColor(sf::Color::White);
+
+            runtime.setPosition(sf::Vector2f(400, 250));
+            runtime.setCharacterSize(60);
+            window.draw(displayMessage);
         }
        
         for (int i = 0; i < spaceOut && i <MOLE_NUM; i++) {
@@ -77,6 +88,7 @@ int main(void) {
             moles[i].update();
         }
         window.draw(runtime);
+        
         window.display();
         
         spaceOut= gameClock.getElapsedTime().asSeconds()-1;
