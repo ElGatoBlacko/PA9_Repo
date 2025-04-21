@@ -86,10 +86,8 @@ bool Mole::isHit(sf::Event event, sf::RenderWindow& window)
 		return false;
 	}
 	if (event.is<sf::Event::MouseButtonPressed>()) {
-		sf::Vector2i pos = sf::Mouse::getPosition(window);
-		float x = static_cast<float>(pos.x);
-		float y = static_cast<float>(pos.y);
-		return this->getGlobalBounds().contains(sf::Vector2f(x, y));
+		sf::Vector2f pos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+		return this->getGlobalBounds().contains(pos);
 	}
 	return false;
 }
