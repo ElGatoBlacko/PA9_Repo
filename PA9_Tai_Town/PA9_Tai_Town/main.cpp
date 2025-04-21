@@ -101,7 +101,7 @@ int main(void) {
                 if (event->is<sf::Event::MouseButtonPressed>()) {
                     for (int i = 0; i < MOLE_NUM; ++i) {
                         if (moles[i].isHit(*event, window)) {
-                            std::cout << "MOLE HIT" << std::endl;
+                            //std::cout << "MOLE HIT" << std::endl;
                             moles[i].hide();
                             moles[i].setHitState(true);
                         }
@@ -152,7 +152,7 @@ int main(void) {
 
             
 
-            spaceOut = gameClock.getElapsedTime().asSeconds();
+            spaceOut = gameClock.getElapsedTime().asSeconds()*2;
         }
         else if (current == GameState::Score) {
 

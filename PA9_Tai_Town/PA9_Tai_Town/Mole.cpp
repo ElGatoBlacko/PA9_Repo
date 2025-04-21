@@ -29,10 +29,10 @@ void Mole::initialize(int difficulty)
 
 	switch (difficulty) {
 	case 1:
-		visibleBase = 1.0f;
+		visibleBase = 0.8f;
 		break;
 	case 2:
-		visibleBase = 0.5f;
+		visibleBase = 0.4f;
 		break;
 	case 3:
 		visibleBase = 0.0f;
@@ -43,7 +43,7 @@ void Mole::initialize(int difficulty)
 	}
 
 	hiddenDuration = 0;
-	visibleDuration = (rand() % 100) * 0.01f + visibleBase;
+	visibleDuration = (rand() % 70) * 0.01f + visibleBase;
 }
 
 void Mole::update()
@@ -57,7 +57,7 @@ void Mole::update()
 		}
 		else if (!isVisible && elapsedTime > hiddenDuration) {
 			show();
-			visibleDuration = (rand() % 100) * 0.01f + visibleBase;
+			visibleDuration = (rand() % 70) * 0.01f + visibleBase;
 			timer.restart();
 		}
 	}
