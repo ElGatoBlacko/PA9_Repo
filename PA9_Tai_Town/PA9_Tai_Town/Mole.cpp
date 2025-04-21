@@ -42,7 +42,7 @@ void Mole::initialize(int difficulty)
 		break;
 	}
 
-	hiddenDuration = (rand() % 100) * 0.01f + 2.0f;
+	hiddenDuration = 0;
 	visibleDuration = (rand() % 100) * 0.01f + visibleBase;
 }
 

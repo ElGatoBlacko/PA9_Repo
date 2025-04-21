@@ -11,6 +11,7 @@ public:
 	sf::FloatRect getEasyBounds();
 	sf::FloatRect getMediumBounds();
 	sf::FloatRect getHardBounds();
+	sf::FloatRect getRecordsBounds();
 private:
-	sf::Text title, easy, medium, hard;
+	sf::Text title, easy, medium, hard, records;
 };
