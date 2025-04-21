@@ -144,6 +144,7 @@
     <ClInclude Include="Menu.hpp" />
     <ClInclude Include="Mole.hpp" />
     <ClInclude Include="ScoreRecord.hpp" />
+    <ClInclude Include="Test.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="HighScores.txt" />
