@@ -178,16 +178,16 @@ int main(void) {
             
 
             sf::Text displayMessage(font, "Score:", 60);
-            displayMessage.setPosition(sf::Vector2f(245, 250));
+            displayMessage.setPosition(sf::Vector2f(250, 250));
             displayMessage.setFillColor(sf::Color::White);
 
-            runtime.setPosition(sf::Vector2f(400, 250));
+            runtime.setPosition(sf::Vector2f(405, 250));
             runtime.setCharacterSize(60);
 
 
             sf::Text returnPrompt(font, "(Press any key to return to menu)", 30);
 
-            returnPrompt.setPosition(sf::Vector2f(200, 300));
+            returnPrompt.setPosition(sf::Vector2f(175, 350));
             returnPrompt.setFillColor(sf::Color::White);
 
             window.draw(displayMessage);
