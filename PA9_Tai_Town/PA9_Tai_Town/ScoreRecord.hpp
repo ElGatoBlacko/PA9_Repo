@@ -7,6 +7,16 @@ public:
 	void import(std::ifstream& in);
 	void exportScores(std::ofstream& out);
 	
+	/*
+	* Function: setEasy()
+	* Date Created: 4/20/25
+	* Date Last Modified: 4/20/25
+	* Description: setter for easyHigh field (float that stores easy mode high score)
+	* Input parameters: new float representing new high score
+	* Returns: none
+	* Preconditions: none
+	* Postconditions: none
+	*/
 	void setEasy(float newEasy);
 	void setMedium(float newMedium);
 	void setHard(float newHard);
