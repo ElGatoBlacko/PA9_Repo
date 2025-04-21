@@ -20,7 +20,7 @@ int main(void) {
 
     srand(static_cast<unsigned>(time(0)));
 
-    sf::RenderWindow window(sf::VideoMode({ 800, 600 }), "SFML works!");
+    sf::RenderWindow window(sf::VideoMode({ 800, 600 }), "We Love You Andy <3");
     sf::Texture moleTexture;
     sf::Font font;
   //  std::cout << "Working directory: " << std::filesystem::current_path() << std::endl;
