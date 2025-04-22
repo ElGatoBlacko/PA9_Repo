@@ -29,12 +29,15 @@ void Mole::initialize(int difficulty)
 
 	switch (difficulty) {
 	case 1:
+		// easy 
 		visibleBase = 0.8f;
 		break;
 	case 2:
+		// medium
 		visibleBase = 0.4f;
 		break;
 	case 3:
+		// hard
 		visibleBase = 0.0f;
 		break;
 	default:

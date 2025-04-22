@@ -6,6 +6,7 @@
 #include<fstream>
 #include"Menu.hpp"
 #include"ScoreRecord.hpp"
+#include "Test.hpp"
 
 const int MOLE_NUM = 10;
 

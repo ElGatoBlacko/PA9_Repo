@@ -3,7 +3,16 @@
 class ScoreRecord {
 public:
 	ScoreRecord();
-
+	/*
+	* Function: import()
+	* Date Created: 4/20/25
+	* Date Last Modified: 4/20/25
+	* Description: loads saved scores
+	* Input parameters: std::ifstream& in
+	* Returns: none
+	* Preconditions: input file must be open 
+	* Postconditions: values read from file are stored in variables 
+	*/
 	void import(std::ifstream& in);
 	void exportScores(std::ofstream& out);
 	
