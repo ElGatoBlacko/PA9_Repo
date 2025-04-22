@@ -6,7 +6,7 @@ Names:
 Emery Town Lab 10
 Arie Tai Lab 7
 
-Video: 
+Video: https://youtu.be/8M7v9aFodjw
 
 Game discription: 
 Our game is a fresh take on the classic carnival game you all know and love :) Instead of the normal grid of 
