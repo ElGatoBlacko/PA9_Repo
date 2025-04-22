@@ -9,17 +9,9 @@ Arie Tai Lab 7
 Video: 
 
 Game discription: 
-As the moles pop up on the screen hit as many as you can to get a higher score within a minute. 
+Our game is a fresh take on the classic carnival game you all know and love :) Instead of the normal grid of 
+moles holes, these pesky buggers can pop up anywhere on the screen! The objective has changed slightly too! Instead of racking up points-per-whack 
+in a set amount of time on the same few moles, your goal is now to eliminate all ten of the pesky critters as quick as you can. Once you click a mole its 
+out for the count and won't pop up again. The timer stops counting up when you whack the last mole. Choose your prefered difficulty from the beginner friendly
+easy mode, up to the neck-breakingly fast hard mode and try to set the high score for each! That's all, get to whacking!
 
-Having game options 
-	- 60 seconds of pop ups (do this first)
-	- Grid based where specific moles pop up (like the actual game)
-	- hunting mode (certain amount of moles score is time it takes to get all the moles)
-
-Plan: 
-	Mole class
-	- Mole object that inherits sprite class and has added functionality of popping up/appearing and disappearing 
-	- detection of if its hit 
-
-	Menu class
-	- menu options for game modes 
