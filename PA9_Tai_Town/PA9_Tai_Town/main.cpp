@@ -14,7 +14,8 @@ enum class GameState {
     Menu,
     Playing,
     Score,
-    Records
+    Records,
+    Description
 };
 
 int main(void) {
@@ -24,7 +25,7 @@ int main(void) {
     sf::RenderWindow window(sf::VideoMode({ 800, 600 }), "We Love You Andy <3");
     sf::Texture moleTexture;
     sf::Font font;
-  //  std::cout << "Working directory: " << std::filesystem::current_path() << std::endl;
+
     moleTexture.loadFromFile("mole_image.png");
     font.openFromFile("WinkyRough-VariableFont_wght.ttf");
 
@@ -93,6 +94,9 @@ int main(void) {
                     else if (menu.getRecordsBounds().contains(pos)) {
                         current = GameState::Records;
                     }
+                    else if (menu.getDescriptionBounds().contains(pos)) {
+                        current = GameState::Description;
+                    }
                     for (int i = 0; i < MOLE_NUM; i++) {
                         moles[i].initialize(difficulty);
                     }
@@ -109,7 +113,7 @@ int main(void) {
                     }
                 }
             }
-            else if (current == GameState::Score || current == GameState::Records) {
+            else if (current == GameState::Score || current == GameState::Records || current == GameState::Description) {
                 if (event->is<sf::Event::KeyPressed>()) {
                     runtime.setPosition(sf::Vector2f(0, 0));
                     runtime.setCharacterSize(30);
@@ -230,6 +234,28 @@ int main(void) {
             window.draw(easyMessage);
             window.draw(mediumMessage);
             window.draw(hardMessage);
+            window.draw(returnPrompt);
+        }
+        else if (current == GameState::Description) {
+            std::string message = "Welcome to Whack-A-Mole!\nOur game is a fresh take on the "
+                "classic carnival game you all know and\nlove :) Instead of the normal grid of "
+                "moles holes, these pesky buggers\ncan pop up anywhere on the screen! The "
+                "objective has changed slightly too!\nInstead of racking up points-per-whack "
+                "in a set amount of time on the\nsame few moles, your goal is now to eliminate "
+                "all ten of the pesky critters\nas quick as you can. Once you click a mole its "
+                "out for the count and won't\npop up again. The timer stops counting up when you "
+                "whack the last mole.\nChoose your prefered difficulty from the beginner friendly "
+                "easy mode, up to\nthe neck-breakingly fast hard mode and try to set the high "
+                "score for each!\nThat's all, get to whacking!";
+            sf::Text displayMessage(font, message, 25);
+            displayMessage.setPosition(sf::Vector2f(10, 40));
+            displayMessage.setFillColor(sf::Color::White);
+
+            sf::Text returnPrompt(font, "(Press any key to return to menu)", 20);
+            returnPrompt.setPosition(sf::Vector2f(250, 550));
+            returnPrompt.setFillColor(sf::Color::White);
+
+            window.draw(displayMessage);
             window.draw(returnPrompt);
         }
         window.display();
