@@ -113,10 +113,10 @@ void Test::testHide()
     mole.hide(); 
     if (!mole.getIsVisible())
     {
-        std::cout << "Hide works, mole is not visible" << std::endl;
+        std::cout << "Hide works mole is not visible" << std::endl;
     }
     else
     {
-        std::cout << "Hide does not work, mole is visible" << std::endl;
+        std::cout << "Hide does not work mole is visible" << std::endl;
     }
 }

@@ -2,7 +2,7 @@
 
 /*
 	* Function: Mole()
-	* Date Created: 4/20/25
+	* Date Created: 4/18/25
 	* Date Last Modified: 4/20/25
 	* Description: constructor that initializes a Mole object at a specific position with a difficulty level
 	* Input parameters: const sf::Texture& texture: the texture to apply to the mole, const sf::Vector2f& pos: the initial position of the mole,
@@ -19,7 +19,7 @@ Mole::Mole(const sf::Texture& texture, const sf::Vector2f& pos, int difficulty) 
 }
 /*
 	* Function: Mole()
-	* Date Created: 4/20/25
+	* Date Created: 4/18/25
 	* Date Last Modified: 4/20/25
 	* Description: constructor that initializes a Mole object at a random position and difficulty level
 	* Input parameters: const sf::Texture& texture: the texture to apply to the mole, int difficulty: the difficulty level (1 = easy, 2 = medium, 3 = hard)
@@ -38,7 +38,7 @@ Mole::Mole(const sf::Texture& texture, int difficulty) : sf::Sprite(texture) {
 }
 /*
 	* Function: initialize()
-	* Date Created: 4/20/25
+	* Date Created: 4/18/25
 	* Date Last Modified: 4/20/25
 	* Description: sets up the mole based on the difficulty level and visible duration ranges
 	* Input parameters: int difficulty
@@ -78,7 +78,7 @@ void Mole::initialize(int difficulty)
 }
 /*
 	* Function: update()
-	* Date Created: 4/20/25
+	* Date Created: 4/18/25
 	* Date Last Modified: 4/20/25
 	* Description: updates visibility of mole
 	* Input parameters: none
@@ -104,7 +104,7 @@ void Mole::update()
 }
 /*
 	* Function: hide()
-	* Date Created: 4/20/25
+	* Date Created: 4/18/25
 	* Date Last Modified: 4/20/25
 	* Description: hides mole by making it transparent and setting isVisible to false
 	* Input parameters: none
@@ -120,7 +120,7 @@ void Mole::hide()
 }
 /*
 	* Function: show()
-	* Date Created: 4/20/25
+	* Date Created: 4/18/25
 	* Date Last Modified: 4/20/25
 	* Description: makes mole visible and randomly places it on the screen
 	* Input parameters: none
@@ -139,7 +139,7 @@ void Mole::show()
 }
 /*
 	* Function: isHit()
-	* Date Created: 4/20/25
+	* Date Created: 4/18/25
 	* Date Last Modified: 4/20/25
 	* Description: determines if mole was hit or not
 	* Input parameters: sf::Event event, sf::RenderWindow& window
@@ -161,7 +161,7 @@ bool Mole::isHit(sf::Event event, sf::RenderWindow& window)
 
 /*
 	* Function: setIsVisible()
-	* Date Created: 4/20/25
+	* Date Created: 4/18/25
 	* Date Last Modified: 4/20/25
 	* Description: sets mole visible
 	* Input parameters: const bool newVis
@@ -175,7 +175,7 @@ void Mole::setIsVisible(const bool newVis)
 }
 /*
 	* Function: setHitState()
-	* Date Created: 4/20/25
+	* Date Created: 4/18/25
 	* Date Last Modified: 4/20/25
 	* Description: sets mole hit state (true if hit)
 	* Input parameters: const bool newHitState
@@ -189,7 +189,7 @@ void Mole::setHitState(const bool newHitState)
 }
 /*
 	* Function: getIsVisible()
-	* Date Created: 4/20/25
+	* Date Created: 4/18/25
 	* Date Last Modified: 4/20/25
 	* Description: gets moles visibility
 	* Input parameters: none
@@ -203,7 +203,7 @@ bool Mole::getIsVisible()
 }
 /*
 	* Function: getHitState()
-	* Date Created: 4/20/25
+	* Date Created: 4/18/25
 	* Date Last Modified: 4/20/25
 	* Description: gets moles hit state
 	* Input parameters: none
@@ -218,8 +218,8 @@ bool Mole::getHitState()
 
 /*
 * Function: getVisibleDuration()
-* Date Created: 4/20/25
-* Date Last Modified: 4/20/25
+* Date Created: 4/22/25
+* Date Last Modified: 4/22/25
 * Description: gets moles visible duration
 * Input parameters: none
 * Returns: float representing visible duration
