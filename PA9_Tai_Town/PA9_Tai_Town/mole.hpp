@@ -4,7 +4,6 @@
 
 class Mole : public sf::Sprite {
 public:
-	//if we have time add function to check for mole overlap
 
 	/*
 	* Function: Mole()
@@ -30,6 +29,31 @@ public:
 	* Postconditions: a Mole is created, initialized, and randomly positioned
 	*/
 	Mole(const sf::Texture& texture, int difficulty);
+
+	/*
+	* Function: Mole()
+	* Date Created: 4/18/25
+	* Date Last Modified: 4/20/25
+	* Description: copy constructor for Mole object  (new clock starts)
+	* Input parameters: const reference to other mole object
+	* Returns: none
+	* Preconditions: none
+	* Postconditions: mole copied
+	*/
+	Mole(const Mole& copy);
+
+	/*
+	* Function: ~Mole()
+	* Date Created: 4/22/25
+	* Date Last Modified: 4/22/25
+	* Description: destructor for mole class
+	* Input parameters: none
+	* Returns: none
+	* Preconditions: none
+	* Postconditions: mole is destructed
+	*/
+	~Mole();
+
 
 	/*
 	* Function: initialize()

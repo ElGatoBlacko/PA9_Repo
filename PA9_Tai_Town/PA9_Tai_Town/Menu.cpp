@@ -26,6 +26,34 @@ Menu::Menu(sf::Font& font) : title(font, "Whack-A-Mole", 100), easy(font, "Easy 
 	description.setPosition(sf::Vector2f(290, 150));
 }
 /*
+* Function: Menu()
+* Date Created: 4/22/25
+* Date Last Modified: 4/22/25
+* Description: copy constructor for menu class
+* Input parameters: const reference to original menu
+* Returns: none
+* Preconditions: none
+* Postconditions: menu is copied
+*/
+Menu::Menu(const Menu& copy) : title(copy.title), easy(copy.easy), medium(copy.medium), hard(copy.hard), records(copy.records), description(copy.description)
+{
+}
+
+/*
+* Function: ~Menu()
+* Date Created: 4/22/25
+* Date Last Modified: 4/22/25
+* Description: destructor for menu class
+* Input parameters: none
+* Returns: none
+* Preconditions: none
+* Postconditions: menu is destructed
+*/
+Menu::~Menu()
+{
+	//destructor unnecessary, no manual reasource management needed
+}
+/*
 	* Function: draw()
 	* Date Created: 4/20/25
 	* Date Last Modified: 4/20/25

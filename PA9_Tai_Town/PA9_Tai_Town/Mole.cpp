@@ -36,6 +36,43 @@ Mole::Mole(const sf::Texture& texture, int difficulty) : sf::Sprite(texture) {
 	this->setPosition(sf::Vector2f(randX, randY));
 
 }
+
+/*
+* Function: Mole()
+* Date Created: 4/18/25
+* Date Last Modified: 4/20/25
+* Description: copy constructor for Mole object (new clock starts)
+* Input parameters: const reference to other mole object
+* Returns: none
+* Preconditions: none
+* Postconditions: mole copied
+*/
+Mole::Mole(const Mole& copy) : sf::Sprite(copy.getTexture())
+{
+	isVisible = copy.isVisible;
+	hiddenDuration = copy.hiddenDuration;
+	visibleBase = copy.visibleBase;
+	visibleDuration = copy.visibleDuration;
+	hitState = copy.hitState;
+	timer = sf::Clock();
+
+}
+
+/*
+* Function: ~Mole()
+* Date Created: 4/22/25
+* Date Last Modified: 4/22/25
+* Description: destructor for mole class
+* Input parameters: none
+* Returns: none
+* Preconditions: none
+* Postconditions: mole is destructed
+*/
+Mole::~Mole()
+{
+	//destructor unnecessary, no manual reasource management needed
+}
+
 /*
 	* Function: initialize()
 	* Date Created: 4/18/25

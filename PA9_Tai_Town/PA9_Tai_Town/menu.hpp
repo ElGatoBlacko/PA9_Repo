@@ -16,6 +16,30 @@ public:
 	Menu(sf::Font& font);
 	
 	/*
+	* Function: Menu()
+	* Date Created: 4/22/25
+	* Date Last Modified: 4/22/25
+	* Description: copy constructor for menu class
+	* Input parameters: const reference to original menu
+	* Returns: none
+	* Preconditions: none
+	* Postconditions: menu is copied
+	*/
+	Menu(const Menu& copy);
+
+	/*
+	* Function: ~Menu()
+	* Date Created: 4/22/25
+	* Date Last Modified: 4/22/25
+	* Description: destructor for menu class
+	* Input parameters: none
+	* Returns: none
+	* Preconditions: none
+	* Postconditions: menu is destructed
+	*/
+	~Menu();
+
+	/*
 	* Function: draw()
 	* Date Created: 4/20/25
 	* Date Last Modified: 4/20/25

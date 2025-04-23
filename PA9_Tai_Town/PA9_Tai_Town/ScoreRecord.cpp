@@ -1,10 +1,50 @@
 #include "ScoreRecord.hpp"
 
+/*
+* Function: ScoreRecord()
+* Date Created: 4/21/25
+* Date Last Modified: 4/21/25
+* Description: constructor for scoreRecord object sets all fields to 0.0
+* Input parameters: none
+* Returns: none
+* Preconditions: none
+* Postconditions: object is constructed
+*/
 ScoreRecord::ScoreRecord()
 {
 	easyHigh = 0.0;
 	mediumHigh = 0.0;
 	hardHigh = 0.0;
+}
+/*
+* Function: ScoreRecord()
+* Date Created: 4/21/25
+* Date Last Modified: 4/21/25
+* Description: copy constructor for scoreRecord object
+* Input parameters: const reference to other scoreRecord object
+* Returns: none
+* Preconditions: none
+* Postconditions: object is copied
+*/
+ScoreRecord::ScoreRecord(const ScoreRecord& copy)
+{
+	easyHigh = copy.easyHigh;
+	mediumHigh = copy.mediumHigh;
+	hardHigh = copy.hardHigh;
+}
+/*
+* Function: ~ScoreRecord()
+* Date Created: 4/22/25
+* Date Last Modified: 4/22/25
+* Description: destructor for ScoreRecord class
+* Input parameters: none
+* Returns: none
+* Preconditions: none
+* Postconditions: ScoreRecord is destructed
+*/
+ScoreRecord::~ScoreRecord()
+{
+	//destructor unnecessary, no manual reasource management needed
 }
 /*
 	* Function: import()

@@ -2,7 +2,41 @@
 #include<fstream>
 class ScoreRecord {
 public:
+	/*
+	* Function: ScoreRecord()
+	* Date Created: 4/21/25
+	* Date Last Modified: 4/21/25
+	* Description: constructor for scoreRecord object sets all fields to 0.0
+	* Input parameters: none
+	* Returns: none
+	* Preconditions: none
+	* Postconditions: object is constructed
+	*/
 	ScoreRecord();
+
+	/*
+	* Function: ScoreRecord()
+	* Date Created: 4/21/25
+	* Date Last Modified: 4/21/25
+	* Description: copy constructor for scoreRecord object
+	* Input parameters: const reference to other scoreRecord object
+	* Returns: none
+	* Preconditions: none
+	* Postconditions: object is copied
+	*/
+	ScoreRecord(const ScoreRecord& copy);
+
+	/*
+	* Function: ~ScoreRecord()
+	* Date Created: 4/22/25
+	* Date Last Modified: 4/22/25
+	* Description: destructor for ScoreRecord class
+	* Input parameters: none
+	* Returns: none
+	* Preconditions: none
+	* Postconditions: ScoreRecord is destructed
+	*/
+	~ScoreRecord();
 
 	/*
 	* Function: import()
