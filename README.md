@@ -1,3 +1,4 @@
+(readme.txt also included in reasource folder like instructed)
 PA 9 
 CPT 122
 April 23, 2025
