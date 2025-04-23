@@ -309,7 +309,7 @@ int main(void) {
         window.display();
         
     }
-    //close file instream
+    //close file instream 
     in.close();
     return 0;
 }
