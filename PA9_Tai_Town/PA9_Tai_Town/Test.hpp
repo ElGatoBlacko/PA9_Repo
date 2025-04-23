@@ -2,7 +2,7 @@
 #include "Mole.hpp"
 #include<iostream>
 
-class test
+class Test
 {
 public: 
 	/*

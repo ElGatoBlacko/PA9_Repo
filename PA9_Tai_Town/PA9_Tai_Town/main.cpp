@@ -22,6 +22,12 @@ enum class GameState {
 
 int main(void) {
 
+    Test tester;
+    tester.testEasy();
+    tester.testMedium();
+    tester.testHard();
+    tester.testHide();
+    tester.testShow();
     //setting the seed for randomization
     srand(static_cast<unsigned>(time(0)));
 

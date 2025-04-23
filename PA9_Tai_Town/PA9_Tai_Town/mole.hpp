@@ -139,6 +139,8 @@ public:
 	*/
 	bool getHitState();
 
+	float getVisibleDuration();
+
 private:
 	bool isVisible; // if isVisible is false then the click doesn't count towards the score 
 	float hiddenDuration,visibleDuration,visibleBase; // amount of time mole is hidden, amount of time mole is visible and able to be hit 

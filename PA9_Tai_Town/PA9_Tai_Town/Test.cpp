@@ -9,12 +9,12 @@
     * Preconditions: mole with easy difficulty
     * Postconditions: gives if duration is right or not
     */
-void test::testEasy()
+void Test::testEasy()
 {
     sf::Texture texture; 
     Mole mole(texture, sf::Vector2f(100, 100), 1);
     mole.show();
-    if (mole.getIsVisible() >= 0.8f && mole.getIsVisible() <= 1.5f)
+    if (mole.getVisibleDuration() >= 0.8f && mole.getVisibleDuration() <= 1.5f)
     {
         std::cout << "Easy works visible duration is correct" << std::endl;
     }
@@ -33,12 +33,12 @@ void test::testEasy()
     * Preconditions: mole with medium difficulty
     * Postconditions: gives if duration is right or not
     */
-void test::testMedium()
+void Test::testMedium()
 {
     sf::Texture texture;
-    Mole mole(texture, sf::Vector2f(100, 100), 1);
+    Mole mole(texture, sf::Vector2f(100, 100), 2);
     mole.show();
-    if (mole.getIsVisible() >= 0.4f && mole.getIsVisible() <= 1.1f)
+    if (mole.getVisibleDuration() >= 0.4f && mole.getVisibleDuration() <= 1.1f)
     {
         std::cout << "Medium works visible duration is correct" << std::endl;
     }
@@ -57,12 +57,12 @@ void test::testMedium()
     * Preconditions: mole with hard difficulty
     * Postconditions: gives if duration is right or not
     */
-void test::testHard()
+void Test::testHard()
 {
     sf::Texture texture;
-    Mole mole(texture, sf::Vector2f(100, 100), 1);
+    Mole mole(texture, sf::Vector2f(100, 100), 3);
     mole.show();
-    if (mole.getIsVisible() >= 0.0f && mole.getIsVisible() <= 0.7f)
+    if (mole.getVisibleDuration() >= 0.0f && mole.getVisibleDuration() <= 0.7f)
     {
         std::cout << "Hard works visible duration is correct" << std::endl;
     }
@@ -81,18 +81,18 @@ void test::testHard()
     * Preconditions: mole must be constructed
     * Postconditions: isVisible should be true
     */
-void test::testShow()
+void Test::testShow()
 {
     sf::Texture texture;
     Mole mole(texture, sf::Vector2f(100, 100), 1);
     mole.show();
     if (mole.getIsVisible())
     {
-        std::cout << "Mole is visible" << std::endl;
+        std::cout << "Show works, mole is visible" << std::endl;
     }
     else
     {
-        std::cout << "Mole is not visible" << std::endl;
+        std::cout << "Show does not work, mole is not visible" << std::endl;
     }
 }
 /*
@@ -105,7 +105,7 @@ void test::testShow()
     * Preconditions: mole must be constructed
     * Postconditions: isVisible should be false
     */
-void test::testHide()
+void Test::testHide()
 {
     sf::Texture texture;
     Mole mole(texture, sf::Vector2f(100, 100), 1);
@@ -113,10 +113,10 @@ void test::testHide()
     mole.hide(); 
     if (!mole.getIsVisible())
     {
-        std::cout << "Mole is visible" << std::endl;
+        std::cout << "Hide works, mole is not visible" << std::endl;
     }
     else
     {
-        std::cout << "Mole is not visible" << std::endl;
+        std::cout << "Hide does not work, mole is visible" << std::endl;
     }
 }

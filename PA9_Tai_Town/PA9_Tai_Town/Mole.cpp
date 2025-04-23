@@ -215,3 +215,18 @@ bool Mole::getHitState()
 {
 	return hitState;
 }
+
+/*
+* Function: getVisibleDuration()
+* Date Created: 4/20/25
+* Date Last Modified: 4/20/25
+* Description: gets moles visible duration
+* Input parameters: none
+* Returns: float representing visible duration
+* Preconditions: none
+* Postconditions: none
+*/
+float Mole::getVisibleDuration()
+{
+	return visibleDuration;
+}
