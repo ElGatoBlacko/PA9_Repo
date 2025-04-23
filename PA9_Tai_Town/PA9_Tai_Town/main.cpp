@@ -1,3 +1,10 @@
+/*
+    Programmers: Arie Tai and Emery Town
+    Class: CptS 122, Spring 2025; Lab Section 7 and Lab Section 10
+    Programming Assignment: PA 9
+    Date: April 22, 2025
+    Description: This is the main for our whack-a-mole game
+*/
 #include <SFML/Graphics.hpp>
 #include<ctime>
 #include"Mole.hpp"
