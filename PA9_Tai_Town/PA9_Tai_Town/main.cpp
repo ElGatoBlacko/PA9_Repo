@@ -22,12 +22,14 @@ enum class GameState {
 
 int main(void) {
 
+    //runs test cases and prints to console
     Test tester;
     tester.testEasy();
     tester.testMedium();
     tester.testHard();
     tester.testHide();
     tester.testShow();
+
     //setting the seed for randomization
     srand(static_cast<unsigned>(time(0)));
 
@@ -309,4 +311,5 @@ int main(void) {
     }
     //close file instream
     in.close();
+    return 0;
 }

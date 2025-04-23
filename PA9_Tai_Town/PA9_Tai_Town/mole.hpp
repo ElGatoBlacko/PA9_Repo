@@ -22,7 +22,7 @@ public:
 	* Function: Mole()
 	* Date Created: 4/18/25
 	* Date Last Modified: 4/20/25
-	* Description: constructor that initializes a Mole object at a random position and difficulty level
+	* Description: constructor that initializes a Mole object at a random position and with a set difficulty level
 	* Input parameters: const sf::Texture& texture: the texture to apply to the mole, int difficulty: the difficulty level (1 = easy, 2 = medium, 3 = hard)
 	* Returns: none
 	* Preconditions: texture given
