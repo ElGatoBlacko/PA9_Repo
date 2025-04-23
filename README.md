@@ -1,4 +1,4 @@
-(readme.txt also included in reasource folder like instructed)
+*readme.txt also included in reasource folder like instructed (may have moved itself to source files)*
 
 PA 9 
 CPT 122
